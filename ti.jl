@@ -10,10 +10,10 @@
 
 # Experimental parameters
   const a = 8.135781
-  const v_F = 0.20
-  const A = -0.05
-  const B = 0.05
-  const C = 0.05
+  v_F = 2.00
+  m_eff = 0.025
+  A = -0.10
+  B = 0.05
 
   a1 = [   a,         0.0,  0.0 ]
   a2 = [ a/2, sqrt(3)*a/2,  0.0 ]
@@ -31,3 +31,5 @@ include("src/hamiltonian.jl")
 include("src/k-points.jl")
 include("src/diagonalize.jl")
 include("src/io.jl")
+
+

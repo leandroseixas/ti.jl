@@ -7,3 +7,5 @@
   energies = map(eigvals, map(H, k_cartesian))
 
   band(n) = [ energies[i][n] for i=1:n_kpt ]
+
+
