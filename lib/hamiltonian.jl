@@ -5,7 +5,6 @@
   println(STDOUT, "\033[1;32m\tSetting\033[0m Hamiltonian.")
 
   f(k) = -k[2] -im*k[1]
-#  f(k) = k[1] - im*k[2]
 
   g(k) = norm(k)^2
 

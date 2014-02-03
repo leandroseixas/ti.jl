@@ -8,4 +8,3 @@
 
   band(n) = [ energies[i][n] for i=1:n_kpt ]
 
-
