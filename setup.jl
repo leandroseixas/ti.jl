@@ -8,6 +8,8 @@
 #            Sao Paulo, SP, Brazil
 #
 
+tic()
+
 # Experimental parameters
   const a = 8.135781
   v_F = 3.20698777
@@ -15,8 +17,6 @@
   A =  0.05
   B = 0.05
  
-  J = 0.00
-
 # v_F = 3.20698777 -> 0.00166688*c
 # m_eff = 0.01466 -> 0.111*m_0
 # m_eff = -0.06137 -> 0.456*m_0
@@ -33,15 +33,27 @@
   a2 = [ a/2, sqrt(3)*a/2,  0.0 ]
   a3 = [ 0.0,         0.0, 10.0 ]
 
+# Hamiltonian
+
+  f(k::Array) = -k[2] -im*k[1]
+
+  g(k::Array) = norm(k)^2
+
+  H(k::Array) = [             0    v_F*f(k)                     B                    0 ;
+                 v_F*conj(f(k))           0                     0                    B ;
+                        conj(B)           0    A + g(k)/(2*m_eff)                    0 ;
+                              0     conj(B)                     0  A  + g(k)/(2*m_eff) ]
+
+t_input = toq()
+
 include("lib/reciprocal_lattice.jl")
-include("lib/hamiltonian.jl")
 include("lib/kpoints.jl")
 include("lib/diagonalize.jl")
 include("lib/io.jl")
 
 
   println(STDOUT, "\n\n\tTotal time:")
-  println(STDOUT, "\t\tsetting hamiltonian:\t\t\t", t_hamiltonian, " s")
+  println(STDOUT, "\t\tsetting input:\t\t\t\t", t_input, " s")
   println(STDOUT, "\t\tsetting k-points:\t\t\t", t_kpoints, " s")
   println(STDOUT, "\t\tdiagonalizing hamiltonian:\t\t", t_diagonalize, " s")
   println(STDOUT, "\t\tsaving band structure in file:\t\t", t_io, " s")
