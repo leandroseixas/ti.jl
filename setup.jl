@@ -8,7 +8,7 @@
 #            Sao Paulo, SP, Brazil
 #
 
-tic()
+  tic()
 
 # Experimental parameters
   const a = 8.135781
@@ -29,9 +29,9 @@ tic()
 # 2.00, -0.06137, 0.05, 0.05
 # 2.00, 0.01466, -0.10, 0.05
 
-  a1 = [   a,         0.0,  0.0 ]
-  a2 = [ a/2, sqrt(3)*a/2,  0.0 ]
-  a3 = [ 0.0,         0.0, 10.0 ]
+  bravais = [   a          0.0   0.0 ;
+              a/2  sqrt(3)*a/2   0.0 ;
+              0.0          0.0   1.0 ]
 
 # Hamiltonian
 
@@ -44,15 +44,14 @@ tic()
                         conj(B)           0    A + g(k)/(2*m_eff)                    0 ;
                               0     conj(B)                     0  A  + g(k)/(2*m_eff) ]
 
-t_input = toq()
+  t_input = toq()
 
 include("lib/reciprocal_lattice.jl")
 include("lib/kpoints.jl")
 include("lib/diagonalize.jl")
 include("lib/io.jl")
 
-
-  println(STDOUT, "\n\n\tTotal time:")
+  println(STDOUT, "\n\n\t..:: Total time ::..")
   println(STDOUT, "\t\tsetting input:\t\t\t\t", t_input, " s")
   println(STDOUT, "\t\tsetting k-points:\t\t\t", t_kpoints, " s")
   println(STDOUT, "\t\tdiagonalizing hamiltonian:\t\t", t_diagonalize, " s")
