@@ -6,9 +6,9 @@
 
   tic()
 
-  path_parameter( ki::Array, kf::Array, n_k::Integer ) = [ (x/n_k)*kf + (1.0 - x/n_k)*ki for x=0:n_k ]
+  path_parameter( ki::Vector, kf::Vector, n_k::Integer ) = [ (x/n_k)*kf + (1.0 - x/n_k)*ki for x=0:n_k ]
 
-  list_per_path(i) = path_parameter(k_path[i][1], k_path[i][2], k_path[i][3])
+  list_per_path( i::Integer ) = path_parameter(k_path[i]...)
 
   n_paths = length(collect(k_path))
 

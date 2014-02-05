@@ -1,12 +1,14 @@
 #!/usr/bin/env julia
 
 ##
-# TI/Metal interface Hamiltonian model 
+#  SAMPA MODELER 
 #
 #    Author: Leandro Seixas <lseixas@if.usp.br>
 #            Instituto de Fisica, Universidade de Sao Paulo (USP)
 #            Sao Paulo, SP, Brazil
 #
+
+#  println(STDOUT, "\033[1;36m\n\tSAMPA MODELER\033[0m\n")
 
   tic()
 
@@ -30,21 +32,21 @@
 #
 
   v_F = 3.20698777
-  m_eff = -0.06137
-  A =  0.05
+  m_eff =  0.01466
+  A = -0.10
   B = 0.05
 
 # v_F = 3.20698777 -> 0.00166688*c
 # m_eff = 0.01466 -> 0.111*m_0
 # m_eff = -0.06137 -> 0.456*m_0
-# Example 1: 2.00, -0.06137, 0.05, 0.05
-# Example 2: 2.00, 0.01466, -0.10, 0.05
+# Example 1: 3.2069877, -0.06137,  0.05, 0.05
+# Example 2: 3.2069877,  0.01466, -0.10, 0.05
 
-  f(k::Array) = -k[2] -im*k[1]
+  f(k::Vector) = -k[2] -im*k[1]
 
-  g(k::Array) = norm(k)^2
+  g(k::Vector) = norm(k)^2
 
-  H(k::Array) = [             0    v_F*f(k)                     B                    0 ;
+  H(k::Vector) = [            0    v_F*f(k)                     B                    0 ;
                  v_F*conj(f(k))           0                     0                    B ;
                         conj(B)           0    A + g(k)/(2*m_eff)                    0 ;
                               0     conj(B)                     0  A  + g(k)/(2*m_eff) ]
