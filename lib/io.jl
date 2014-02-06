@@ -9,7 +9,7 @@
   k_distances = vcat( 0.0, [ norm(k_cartesian[i] - k_cartesian[i-1]) for i=2:n_kpt ] )
   k_cumsum = cumsum(k_distances)
 
-  k_band(n::Integer) = hcat( k_cumsum, band(n) )
+  k_band( n::Integer ) = hcat( k_cumsum, band(n) )
 
   n_bands = rank(H(first(k_cartesian)))
 
