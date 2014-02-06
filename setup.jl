@@ -1,14 +1,14 @@
 #!/usr/bin/env julia
 
 ##
-#  SAMPA MODELER 
+# TI/M Hamiltonian model 
 #
 #    Author: Leandro Seixas <lseixas@if.usp.br>
 #            Instituto de Fisica, Universidade de Sao Paulo (USP)
 #            Sao Paulo, SP, Brazil
 #
 
-#  println(STDOUT, "\033[1;36m\n\tSAMPA MODELER\033[0m\n")
+  println(STDOUT, "\033[1;36m\n\tTI/M Hamiltonian model\033[0m\n")
 
   tic()
 
