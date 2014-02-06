@@ -8,7 +8,7 @@
 #            Sao Paulo, SP, Brazil
 #
 
-  println(STDOUT, "\033[1;36m\n\tTI/M Hamiltonian model\033[0m\n")
+  println(STDOUT, "\n\tTI/M Hamiltonian model\n")
 
   tic()
 

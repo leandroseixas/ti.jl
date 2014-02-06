@@ -2,7 +2,7 @@
 # k-points path
 #
 
-  println(STDOUT, "\033[1;32m\tSetting\033[0m path in Brillouin zone.")
+  println(STDOUT, "\tSetting path in Brillouin zone.")
 
   tic()
 

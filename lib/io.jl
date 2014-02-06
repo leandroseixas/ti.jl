@@ -2,7 +2,7 @@
 # IO
 #
 
-  println(STDOUT,"\033[1;31m\tSaving\033[0m bands in file.")
+  println(STDOUT,"\tSaving bands in file.")
 
   tic()
 
