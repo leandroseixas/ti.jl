@@ -1,6 +1,6 @@
 #!/usr/local/bin/gnuplot
 
-# set title "Bi2Se3/GaAs"
+set title "TI/metal"
 
 # Axis ranges 
   set xrange [0.437631:0.581742]
