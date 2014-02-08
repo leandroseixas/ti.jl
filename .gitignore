@@ -1,6 +1,8 @@
+.DS_Store
 *.dat
 *.png
 *.svg
 *.pdf
 *.eps
 *.pptx
+*.agr

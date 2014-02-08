@@ -16,8 +16,8 @@
 
   n_kpt = length(k_crystal)
 
-  reciprocal = 2pi*inv(bravais)
+  reciprocal = 2pi*inv(bravais)'
 
-  k_cartesian = [ reciprocal*k_crystal[i] for i=1:n_kpt ]
+  k_cartesian = [ reciprocal'*k_crystal[i] for i=1:n_kpt ]
 
   t_kpoints = toq()
