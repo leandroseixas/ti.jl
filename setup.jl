@@ -32,12 +32,12 @@
 #
 
   const v_F = 3.20698777
-#  const m_eff = -0.06137
-  const m_eff = 0.01466
-#  const Delta = 0.05
-  const Delta = -0.10
-  const alpha = 0.05
-#  const alpha = 0.00
+  const m_eff = -0.06137
+#  const m_eff = 0.01466
+  const Delta = 0.05
+#  const Delta = -0.10
+#  const alpha = 0.05
+  const alpha = 0.00
 
 # v_F = 3.20698777 -> 0.00166688*c
 # m_eff = 0.01466 -> 0.111*m_0
@@ -58,6 +58,7 @@
 
 include("lib/kpoints.jl")
 include("lib/diagonalize.jl")
+include("lib/spin_texture.jl")
 include("lib/io.jl")
 
   println(STDOUT, "\n\t..:: Total time ::..")
