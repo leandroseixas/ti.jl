@@ -5,6 +5,8 @@
   println(STDOUT, "\tDiagonalizing Hamiltonian.")
   tic()
 
+#  eigensystem( H::Matrix, k::Vector) = ...
+
 #  eigensystem = map(eig, map(H, k_cartesian))
 
   eigenvalues = map(eigvals, map(H, k_cartesian))
