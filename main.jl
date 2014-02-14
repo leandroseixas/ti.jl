@@ -8,8 +8,6 @@
 #            Sao Paulo, SP, Brazil
 #
 
-module ModelerOne
-
   println(STDOUT, "\n\tTI/M Hamiltonian model\n")
 
   tic()
@@ -69,4 +67,3 @@ include("lib/io.jl")
   println(STDOUT, "\tdiagonalizing hamiltonian:\t\t", t_diagonalize, " s")
   println(STDOUT, "\tsaving band structure in file:\t\t", t_io, " s")
 
-end
