@@ -6,15 +6,6 @@
 
   tic()
 
-  k_distances = vcat( 0.0, [ norm(k_cartesian[i] - k_cartesian[i-1]) for i=2:n_kpt ] )
-  k_cumsum = cumsum(k_distances)
-
-  k_band( n::Integer ) = hcat( k_cumsum, band(n) )
-
-  k_Sx( n::Integer ) = hcat( k_cumsum, Sx(n) )
-  k_Sy( n::Integer ) = hcat( k_cumsum, Sy(n) )
-  k_Sz( n::Integer ) = hcat( k_cumsum, Sz(n) )
-
   n_bands = rank(H(first(k_cartesian)))
 
   file_band = open("./bands.dat", "w")

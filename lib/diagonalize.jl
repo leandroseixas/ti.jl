@@ -13,6 +13,8 @@
 
   band( n::Integer ) = [ eigenvalues[i][n] for i=1:n_kpt ]
 
+  k_band( n::Integer ) = hcat( k_cumsum, band(n) )
+
   eigenvectors = map(eigvecs, map(H, k_cartesian))
 
   psi( k::Integer, n::Integer ) = eigenvectors[k][1:4,n]

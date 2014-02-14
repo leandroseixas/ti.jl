@@ -20,4 +20,7 @@
 
   k_cartesian = [ reciprocal'*k_crystal[i] for i=1:n_kpt ]
 
+  k_distances = vcat( 0.0, [ norm(k_cartesian[i] - k_cartesian[i-1]) for i=2:n_kpt ] )
+  k_cumsum = cumsum(k_distances)
+
   t_kpoints = toq()
