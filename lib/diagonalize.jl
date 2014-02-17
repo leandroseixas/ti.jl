@@ -1,12 +1,13 @@
 ##
 # Diagonalizing Hamiltonian for each k-point
 #
+#  Import: H, k_cartesian, k_cumsum
+#  Export: band, psi
 
   println(STDOUT, "\tDiagonalizing Hamiltonian.")
   tic()
 
 #  eigensystem( H::Matrix, k::Vector) = ...
-
 #  eigensystem = map(eig, map(H, k_cartesian))
 
   eigenvalues = map(eigvals, map(H, k_cartesian))

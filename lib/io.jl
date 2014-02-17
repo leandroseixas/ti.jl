@@ -1,6 +1,8 @@
 ##
 # IO
 #
+# Import: H, k_cartesian, k_band, k_Sx, k_Sy, k_Sz
+#
 
   println(STDOUT,"\tSaving bands in file.")
 

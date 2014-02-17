@@ -1,26 +1,29 @@
 ##
 # k-points path
 #
+#  file: lib/kpoints.jl
+#
+# Import: k_paths
+# Export: k_cartesian, k_cumsum
 
   println(STDOUT, "\tSetting path in Brillouin zone.")
 
   tic()
 
-  path_parameter( ki::Vector, kf::Vector, n_k::Integer ) = [ (x/n_k)*kf + (1.0 - x/n_k)*ki for x=0:n_k ]
+  reciprocal = 2pi*inv(bravais)'
 
-  list_per_path( i::Integer ) = path_parameter(k_path[i]...)
+  parameterize( ks::Array ) = [ (1.0 - x/ks[3])*ks[1] + (x/ks[3])*ks[2] for x=0:ks[3] ]
 
-  n_paths = length(collect(k_path))
+## dependend of k_path (input)
 
-  k_crystal = mapreduce(list_per_path, vcat, 1:n_paths)
+  k_crystal = mapreduce(parameterize, vcat, k_paths) 
 
   n_kpt = length(k_crystal)
-
-  reciprocal = 2pi*inv(bravais)'
 
   k_cartesian = [ reciprocal'*k_crystal[i] for i=1:n_kpt ]
 
   k_distances = vcat( 0.0, [ norm(k_cartesian[i] - k_cartesian[i-1]) for i=2:n_kpt ] )
+
   k_cumsum = cumsum(k_distances)
 
   t_kpoints = toq()
