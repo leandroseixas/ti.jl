@@ -14,7 +14,7 @@
 
   parameterize( ks::Array ) = [ (1.0 - x/ks[3])*ks[1] + (x/ks[3])*ks[2] for x=0:ks[3] ]
 
-## dependend of k_path (input)
+## dependend of k_paths (input)
 
   k_crystal = mapreduce(parameterize, vcat, k_paths) 
 
