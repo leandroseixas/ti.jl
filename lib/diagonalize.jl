@@ -12,7 +12,7 @@
 
   eigenvalues = map(eigvals, map(H, k_cartesian))
 
-  band( n::Integer ) = [ eigenvalues[i][n] for i=1:n_kpt ]
+  band( n::Integer ) = [ real(eigenvalues[i][n]) for i=1:n_kpt ]
 
   k_band( n::Integer ) = hcat( k_cumsum, band(n) )
 
