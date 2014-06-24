@@ -2,7 +2,7 @@
 
 set title "TI/metal"
 
-# Axis ranges 
+# Axis ranges
   set xrange [0.437631:0.581742]
   set yrange [-0.15:0.15]
 

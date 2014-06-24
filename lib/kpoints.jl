@@ -16,7 +16,7 @@
 
 ## dependend of k_paths (input)
 
-  k_crystal = mapreduce(parameterize, vcat, k_paths) 
+  k_crystal = mapreduce(parameterize, vcat, k_paths)
 
   n_kpt = length(k_crystal)
 
