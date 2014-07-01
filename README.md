@@ -1,4 +1,4 @@
 ti.jl
 =====
 
-Hamiltonian model for topological insulator-metal interaction
+Effective Hamiltonian model for topological insulator interaction

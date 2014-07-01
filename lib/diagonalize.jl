@@ -24,6 +24,7 @@
   end
 
   writetable("bands.csv", band_dataframe)
+#  writetable("bands.wsv", band_dataframe)
 
 #  psi( k::Integer, n::Integer ) = eigenvectors[k][:,n]    # old
   psi( k::Integer, n::Integer ) = eigensystem[k][2][:,n]

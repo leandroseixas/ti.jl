@@ -1,14 +1,14 @@
 #!/usr/bin/env julia
 
 ##
-# TI/M Hamiltonian model
+# Hamiltonian model
 #
 #    Author: Leandro Seixas <lseixas@if.usp.br>
 #            Instituto de Fisica, Universidade de Sao Paulo (USP)
 #            Sao Paulo, SP, Brazil
 #
 
-  println(STDOUT, "\n\tTI/M Hamiltonian model\n")
+  println(STDOUT, "\n\tEffective Hamiltonian model\n")
 
   using DataFrames
 #  using Gadfly

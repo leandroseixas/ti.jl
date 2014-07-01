@@ -29,12 +29,12 @@
   const v_F = 3.20698777
   const m_eff = -0.06137
 #  const m_eff = 0.01466
-  const D = 0.05
+  const Δ = 0.05
 #  const D = -0.10
-  const a_0 = 0.00
-  const a_1 = 0.0
-  const a_2 = 0.0
-  const a_3 = 0.05im
+  const α_0 = 0.00
+  const α_1 = 0.0
+  const α_2 = 0.0
+  const α_3 = 0.05im
 
 # v_F = 3.20698777 -> 0.00166688*c
 # m_eff = 0.01466 -> 0.111*m_0
@@ -46,9 +46,9 @@
 
   g(k::Vector) = (1/2)*norm(k)^2
 
-  H(k::Vector) = [              0      v_F*f(k)       a_0 + a_3    a_1 - im*a_2 ;
-                   v_F*conj(f(k))             0    a_1 + im*a_2       a_0 - a_3 ;
-                  conj(a_0) + conj(a_3)  conj(a_1) - im*conj(a_2)  D + g(k)/m_eff      0 ;
-                  conj(a_1) + im*conj(a_2)  conj(a_0) - conj(a_3)     0  D + g(k)/m_eff ]
+  H(k::Vector) = [              0      v_F*f(k)       α_0 + α_3    α_1 - im*α_2 ;
+                   v_F*conj(f(k))             0    α_1 + im*α_2       α_0 - α_3 ;
+                  conj(α_0) + conj(α_3)  conj(α_1) - im*conj(α_2)  Δ + g(k)/m_eff      0 ;
+                  conj(α_1) + im*conj(α_2)  conj(α_0) - conj(α_3)     0  Δ + g(k)/m_eff ]
 
   t_input = toq()

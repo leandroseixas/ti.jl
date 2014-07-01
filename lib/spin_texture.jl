@@ -2,24 +2,24 @@
 #  Spin texture
 #
 
-const Sigma_x = [ 0. 1. 0. 0. ;
+const Σ_x = [ 0. 1. 0. 0. ;
   	          1. 0. 0. 0. ;
 	          0. 0. 0. 1. ;
 	          0. 0. 1. 0. ]
 
-const Sigma_y = [ 0. -1im 0. 0. ;
+const Σ_y = [ 0. -1im 0. 0. ;
 	          1im  0. 0. 0. ;
 	          0. 0. 0. -1im ;
 	          0. 0. +1im 0. ]
 
-const Sigma_z = [ 1.  0.  0.  0. ;
+const Σ_z = [ 1.  0.  0.  0. ;
 	          0. -1.  0.  0. ;
 	          0.  0.  1.  0. ;
 	          0.  0.  0. -1. ]
 
-  Sx( n::Integer ) = [ real(psi(k,n)'*Sigma_x*psi(k,n))[1] for k=1:n_kpt ]
-  Sy( n::Integer ) = [ real(psi(k,n)'*Sigma_y*psi(k,n))[1] for k=1:n_kpt ]
-  Sz( n::Integer ) = [ real(psi(k,n)'*Sigma_z*psi(k,n))[1] for k=1:n_kpt ]
+  Sx( n::Integer ) = [ real(psi(k,n)'*Σ_x*psi(k,n))[1] for k=1:n_kpt ]
+  Sy( n::Integer ) = [ real(psi(k,n)'*Σ_y*psi(k,n))[1] for k=1:n_kpt ]
+  Sz( n::Integer ) = [ real(psi(k,n)'*Σ_z*psi(k,n))[1] for k=1:n_kpt ]
 
   sx_dataframe = DataFrame()
   sy_dataframe = DataFrame()

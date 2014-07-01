@@ -15,6 +15,7 @@ function multiplot(df, x, ys, args...)
 end
 
 mp = multiplot(bands, 1, 2:5,
+Scale.x_continuous(minvalue=0.437631, maxvalue=0.581742), Scale.y_continuous(minvalue=-0.15, maxvalue=0.15),
 Theme(default_color=color("#0033ff"), panel_fill=color("#efefef"), grid_color=color("#fefefe")),
 Geom.line)
 
