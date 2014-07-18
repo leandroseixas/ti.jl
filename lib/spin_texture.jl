@@ -39,7 +39,7 @@ const Σ_z = [ 1.  0.  0.  0. ;
   writetable("Sy.csv", sy_dataframe)
   writetable("Sz.csv", sz_dataframe)
 
-#  k_Sx( n::Integer ) = hcat( k_cumsum, Sx(n) )
-#  k_Sy( n::Integer ) = hcat( k_cumsum, Sy(n) )
-#  k_Sz( n::Integer ) = hcat( k_cumsum, Sz(n) )
+  k_Sx( n::Integer ) = hcat( k_cumsum, Sx(n) )
+  k_Sy( n::Integer ) = hcat( k_cumsum, Sy(n) )
+  k_Sz( n::Integer ) = hcat( k_cumsum, Sz(n) )
 
