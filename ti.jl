@@ -3,9 +3,10 @@
 ##
 # Hamiltonian model
 #
-#    Author: Leandro Seixas <lseixas@if.usp.br>
-#            Instituto de Fisica, Universidade de Sao Paulo (USP)
-#            Sao Paulo, SP, Brazil
+#    Author: Leandro Seixas <seixasle@gmail.com>
+#            Graphene Research Centre (GRC)
+#            National University of Singapore (NUS)
+#            Singapore
 #
 
   println(STDOUT, "\n\tEffective Hamiltonian model\n")
